@@ -1,0 +1,8 @@
+When someone visits the website, the url gets checked in urls.py, if url is found
+it passes the HTTPResponse that is returned by the function that has been assigned to that url or route
+
+Now inside an HTTPResponse, we can pass HTML code, which are called as templates
+
+Model --> Template -->View
+
+User comes, urls get checked, if url present , it's view function gets called which returns a template in response
