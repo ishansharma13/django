@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% load staticfiles %}
-    <!-- {%static 'file.*%} -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -59,8 +57,7 @@
               <a class="nav-link" aria-current="page" href="#">Twitter</a>
               <a class="nav-link" href="#">Resume</a>
               <a class="nav-link" href="#">GitHub</a>
-              <a class="nav-link" href="#">Blog</a>
-              
+              <a class="nav-link active" href="#">Blog</a>
             </div>
           </div>
         </div>
@@ -68,57 +65,49 @@
 </header>
 
 <main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi, I'm Ishan</h1>
-        <p class="lead text-muted">Hey, My name is Ishan and I am proficient in Machine Learning and Deep Learning, and currently learning to build a website</p>
-        <p>
-          <a href="mailto:ishan@mtlbigger.com" class="btn btn-primary my-2">Email Me</a>
-          <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
-        </p>
-      </div>
-    </div>
-  </section>
-  <div class="album py-5 bg-light">
     <div class="container">
-        
-        <!-- <div class="row">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            </div> -->
+    <h1 class="text-center pt-3">Welcome to Ishan's Blog</h1>
+    <br>
+    <br>
+    <h2>Latest Posts</h2>
+    <hr>
 
-
-
-
-
-
-      <div class="row">
-        {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}"/>
-
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-                
-              </div>
-            </div>
-          </div>
-          {%endfor%}
-        </div>
-        
-
-      </div>
     </div>
+    
+    <div class="container">
+            
+            <!-- <div class="row">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                </div> -->
+    
+    
+    
+    
+    
+    
+          
+            {% for blog in blogs.all %}
+            <a href=""><h3>{{blog.title}}</h3></a>
+            <h6>{{blog.pub_date}}</h6>
+            <br>
+            <img class="img-fluid" width=200 height=200 src="{{blog.image.url}}"/>
+            <br>
+            <p>{{blog.summary}}</p>
+            <br>
+            <hr>
+            {%endfor%}       
+                 
+              </div>
+              
+ 
 </main>
 
 <footer class="text-muted py-5">
