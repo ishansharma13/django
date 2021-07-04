@@ -6,3 +6,20 @@ Now inside an HTTPResponse, we can pass HTML code, which are called as templates
 Model --> Template -->View
 
 User comes, urls get checked, if url present , it's view function gets called which returns a template in response
+
+To create an app
+python manage.py startapp 'appname'
+
+then add the app name to settings.py in project folder
+'app.apps.AppConfig'
+
+python manage.py migrate
+to set initial migrations
+
+python manage.py makemigrations to set app and models
+
+to create admin account for access
+
+python manage.py createsuperuser
+
+website/admin gives access to the backend django database that contains tables
